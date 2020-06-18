@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "kr.or.connect.reservation.controller" })
+@ComponentScan(basePackages = { "kr.or.connect.restaurant_map.controller" })
 public class WebMvcContextConfiguration extends WebMvcConfigurerAdapter{
 
     @Override

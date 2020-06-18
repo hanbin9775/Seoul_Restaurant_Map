@@ -17,12 +17,9 @@ import org.springframework.transaction.annotation.TransactionManagementConfigure
 public class DBConfig implements TransactionManagementConfigurer {
 	
 	private String driverClassName = "com.mysql.jdbc.Driver";
-	
 	private String url = "jdbc:mysql://localhost:3306/restaurantdb?useUnicode=true&characterEncoding=utf8";
-
 	private String username = "connectuser";
-
-	private String password = "connect123!@#";
+	private String password = "9775";
 
 	@Bean
 	public DataSource dataSource() {

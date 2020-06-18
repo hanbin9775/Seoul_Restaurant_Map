@@ -1,5 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <body>
-<h2>config test</h2>
+<h1>Chicken Map</h1>
+<h2>Top 3 Chicken!</h2>
+<c:forEach items="${top3 }" var="chicken">
+	<div>
+		"${chicken.name } : ${chicken.count }"
+	</div>
+</c:forEach>
+
+
 </body>
 </html>
