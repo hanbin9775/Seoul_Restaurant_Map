@@ -8,4 +8,6 @@ public interface ChickenService {
 	
 	public static final Integer LIMIT = 3; 
 	public List<Chicken> getTop3Chicken(Integer start);
+	
+	public List<Chicken> getGroupByLoc();
 }

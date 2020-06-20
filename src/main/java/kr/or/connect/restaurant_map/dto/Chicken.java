@@ -21,7 +21,7 @@ public class Chicken {
 	public String getLoc() {
 		return loc;
 	}
-	public void setLoc() {
+	public void setLoc(String loc) {
 		this.loc = loc;
 	}
 	public int getCount() {

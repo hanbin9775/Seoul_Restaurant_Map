@@ -21,5 +21,9 @@ public class ChickenServiceImpl implements ChickenService{
 		List<Chicken> top3 = chickenDao.selectTop3(start, ChickenService.LIMIT); 
 		return top3;
 	}
+	public List<Chicken> getGroupByLoc(){
+		List<Chicken> groupLoc = chickenDao.selectGroupLoc();
+		return groupLoc;
+	}
 	
 }
