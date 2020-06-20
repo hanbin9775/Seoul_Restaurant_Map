@@ -34,4 +34,8 @@ public class ChickenDao {
 	        return jdbc.query(SELECT_TOP3_CHICKEN, params, rowMapper);
 	    }
 		
+	    public List<Chicken> selectGroupLoc(){
+	    	return jdbc.query(SELECT_GROUP_BY_lOC, rowMapper);
+	    }
+	    
 }

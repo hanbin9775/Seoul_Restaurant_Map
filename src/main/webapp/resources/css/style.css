@@ -1,0 +1,50 @@
+@font-face {
+	font-family: 'NotoSansCJKkr-Medium';
+	src : url(../fonts/NotoSansCJKkr-Medium.otf) format('truetype');
+}
+
+html, body {
+	font-family : NotoSansCJKkr-Medium;
+	background-color : #fff8f0;
+	height: 100%;
+}
+
+.rankingBox {
+	position : relative;
+	top : 20px;
+	left : 40px;
+	width: 300px;
+	padding:15px 30px;
+	border-radius: 26px;
+	background: #ffd4a3;
+	box-shadow:  5px 5px 10px #d9d3cc, 
+	             -5px -5px 10px #ffffff;
+}
+
+.rankingTitle {
+	font-size : 30px;
+}
+
+.rankingContent {
+	font-size : 20px;
+	padding : 10px 50px;
+	list-style-type:none;
+}
+
+.categories {
+	position : absolute;
+	background : #ffffff;
+	top : 60%;
+	left : 50px;
+	width : 120px;
+	height : 400px;
+}
+
+.seoulMap {
+	position : absolute;
+	background : #ffffff;
+	top : 20%;
+	left : 30%;
+	width : 50%;
+	height: 60%;
+}

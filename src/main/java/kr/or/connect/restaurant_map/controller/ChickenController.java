@@ -20,8 +20,10 @@ public class ChickenController {
 	public String list(@RequestParam(name="start",required=false, defaultValue="0") int start, ModelMap model) {
 	
 		List<Chicken> top3 = chickenService.getTop3Chicken(start);
+		List<Chicken> groupByLoc = chickenService.getGroupByLoc();
 		
 		model.addAttribute("top3",top3);
+		model.addAttribute("groupByLoc", groupByLoc);
 		
 		return "index";
 	}
