@@ -5,20 +5,21 @@
 
 html, body {
 	font-family : NotoSansCJKkr-Medium;
-	background-color : #fff8f0;
+	font-weight : bolder;
 	height: 100%;
+	width : 100%;
 }
 
 .rankingBox {
 	position : relative;
 	top : 20px;
-	left : 40px;
+	left : 5%;
 	width: 300px;
 	padding:15px 30px;
-	border-radius: 26px;
-	background: #ffd4a3;
-	box-shadow:  5px 5px 10px #d9d3cc, 
-	             -5px -5px 10px #ffffff;
+	border-radius: 20px;
+	background: #ffffff;
+	box-shadow:  20px 20px 60px #d9d9d9, 
+	             -20px -20px 60px #ffffff;
 }
 
 .rankingTitle {
@@ -33,18 +34,55 @@ html, body {
 
 .categories {
 	position : absolute;
-	background : #ffffff;
 	top : 60%;
-	left : 50px;
-	width : 120px;
-	height : 400px;
+	left : 5%;
+}
+
+.circularButton {
+	fond-weight : bold;
+	width : 100px;
+	border: none;
+    color: black;
+    padding: 40px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px 2px;
+    border-radius: 50%;
+	background: #ffffff;
+	box-shadow:  15px 15px 29px #d9d9d9, 
+             -15px -15px 29px #ffffff;
+}
+
+.chicken {
+	color : tomato;
 }
 
 .seoulMap {
+	font-size: 30px;
 	position : absolute;
-	background : #ffffff;
-	top : 20%;
-	left : 30%;
-	width : 50%;
-	height: 60%;
+	top : 10%;
+	left : 40%;
+	padding : 50px;
+	border-radius: 50px;
+	background: #ffffff;
+	box-shadow:  20px 20px 60px #d9d9d9, 
+	             -20px -20px 60px #ffffff;
 }
+
+.statsItemName {
+	font-size : 15px;
+}
+
+.statsItemBar {
+	background : tomato;
+	width: calc(3*var(--w));
+	height:10px;
+	border-radius: 50px;
+	padding : 10px;
+}
+
+.active {
+	width: 
+}
+

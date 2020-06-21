@@ -18,17 +18,24 @@
 	</div>
 
 	<div class="categories">
-		There will be categories here
+		<button class="circularButton chicken">
+			Chicken
+		</button>
+		<button class="circularButton coffee">
+			Coffee
+		</button>
+		<button class="circularButton dduck">
+			DDuck
+		</button>
 	</div>
 
 	<div class="seoulMap">
-		There will be Seoul Map here
+		치킨 지수
 		<c:forEach items="${groupByLoc }" var="loc">
-		<div>
-			${loc.loc } : ${loc.count }
-		</div>
-	</c:forEach>
+			<p class="statsItemName">${loc.loc }</p>
+			<div class="statsItemBar" style="--w: ${loc.count }px"></div>
+		</c:forEach>
 	</div>
-
+	<script type="text/javascript" src="${request.contextPath}/restaurant_map/resources/js/index.js"></script>
 </body>
 </html>
