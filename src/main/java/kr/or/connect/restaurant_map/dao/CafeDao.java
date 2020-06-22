@@ -14,28 +14,27 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import kr.or.connect.restaurant_map.dto.Chicken;
+import kr.or.connect.restaurant_map.dto.Cafe;
 
 import static kr.or.connect.restaurant_map.dao.RestaurantDaoSqls.*;
 
 @Repository
-public class ChickenDao {
+public class CafeDao {
 	 private NamedParameterJdbcTemplate jdbc;
-	    private RowMapper<Chicken> rowMapper = BeanPropertyRowMapper.newInstance(Chicken.class);
+	    private RowMapper<Cafe> rowMapper = BeanPropertyRowMapper.newInstance(Cafe.class);
 
-	    public ChickenDao(DataSource dataSource) {
+	    public CafeDao(DataSource dataSource) {
 	        this.jdbc = new NamedParameterJdbcTemplate(dataSource);
 	    }
 	    
-	    public List<Chicken> selectTop3(Integer start, Integer limit) {
+	    public List<Cafe> selectTop3(Integer start, Integer limit) {
 	    	Map<String, Integer> params = new HashMap<>();
 	    	params.put("start", start);
 	    	params.put("limit", limit);
-	        return jdbc.query(SELECT_TOP3_CHICKEN, params, rowMapper);
+	        return jdbc.query(SELECT_TOP3_CAFE, params, rowMapper);
 	    }
 		
-	    public List<Chicken> selectGroupLocChicken(){
-	    	return jdbc.query(CHICKEN_GROUP_BY_lOC, rowMapper);
+	    public List<Cafe> selectGroupLocCafe(){
+	    	return jdbc.query(CAFE_GROUP_BY_lOC, rowMapper);
 	    }
-	    
 }

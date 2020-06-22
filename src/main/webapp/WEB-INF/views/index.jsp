@@ -8,10 +8,10 @@
 <body>
 
 	<div class="rankingBox">
-		<div class="rankingTitle">Top 3 Chicken!
-			<c:forEach items="${top3 }" var="chicken">
+		<div class="rankingTitle">Top 3
+			<c:forEach items="${top3dduck }" var="item">
 				<div class="rankingContent">
-					${chicken.name } : ${chicken.count }
+					${item.name } : ${item.count }
 				</div>
 			</c:forEach>
 		</div>
@@ -31,7 +31,7 @@
 
 	<div class="seoulMap">
 		치킨 지수
-		<c:forEach items="${groupByLoc }" var="loc">
+		<c:forEach items="${groupByLocChicken }" var="loc">
 			<p class="statsItemName">${loc.loc }</p>
 			<div class="statsItemBar" style="--w: ${loc.count }px"></div>
 		</c:forEach>

@@ -14,28 +14,28 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import kr.or.connect.restaurant_map.dto.Chicken;
+import kr.or.connect.restaurant_map.dto.DDuck;
 
 import static kr.or.connect.restaurant_map.dao.RestaurantDaoSqls.*;
 
 @Repository
-public class ChickenDao {
+public class DDuckDao {
 	 private NamedParameterJdbcTemplate jdbc;
-	    private RowMapper<Chicken> rowMapper = BeanPropertyRowMapper.newInstance(Chicken.class);
+	    private RowMapper<DDuck> rowMapper = BeanPropertyRowMapper.newInstance(DDuck.class);
 
-	    public ChickenDao(DataSource dataSource) {
+	    public DDuckDao(DataSource dataSource) {
 	        this.jdbc = new NamedParameterJdbcTemplate(dataSource);
 	    }
 	    
-	    public List<Chicken> selectTop3(Integer start, Integer limit) {
+	    public List<DDuck> selectTop3DDuck(Integer start, Integer limit) {
 	    	Map<String, Integer> params = new HashMap<>();
 	    	params.put("start", start);
 	    	params.put("limit", limit);
-	        return jdbc.query(SELECT_TOP3_CHICKEN, params, rowMapper);
+	        return jdbc.query(SELECT_TOP3_DDUCK, params, rowMapper);
 	    }
 		
-	    public List<Chicken> selectGroupLocChicken(){
-	    	return jdbc.query(CHICKEN_GROUP_BY_lOC, rowMapper);
+	    public List<DDuck> selectGroupLocDDuck(){
+	    	return jdbc.query(DDUCK_GROUP_BY_lOC, rowMapper);
 	    }
 	    
 }
