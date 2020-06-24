@@ -9,6 +9,24 @@
 
 	<div class="rankingBox">
 		<div class="rankingTitle">Top 3
+			<c:forEach items="${top3chicken }" var="item">
+				<div class="rankingContent">
+					${item.name } : ${item.count }
+				</div>
+			</c:forEach>
+		</div>
+	</div>
+	<div class="rankingBox unselected">
+		<div class="rankingTitle">Top 3
+			<c:forEach items="${top3cafe }" var="item">
+				<div class="rankingContent">
+					${item.name } : ${item.count }
+				</div>
+			</c:forEach>
+		</div>
+	</div>
+	<div class="rankingBox unselected">
+		<div class="rankingTitle">Top 3
 			<c:forEach items="${top3dduck }" var="item">
 				<div class="rankingContent">
 					${item.name } : ${item.count }
@@ -16,22 +34,37 @@
 			</c:forEach>
 		</div>
 	</div>
+	
 
 	<div class="categories">
-		<button class="circularButton chicken">
+		<button class="circularButton chickenBtn">
 			Chicken
 		</button>
-		<button class="circularButton coffee">
-			Coffee
+		<button class="circularButton cafeBtn">
+			Cafe
 		</button>
-		<button class="circularButton dduck">
+		<button class="circularButton dduckBtn">
 			DDuck
 		</button>
 	</div>
 
-	<div class="seoulMap">
+	<div class="seoulMap ">
 		치킨 지수
 		<c:forEach items="${groupByLocChicken }" var="loc">
+			<p class="statsItemName">${loc.loc }</p>
+			<div class="statsItemBar" style="--w: ${loc.count }px"></div>
+		</c:forEach>
+	</div>
+	<div class="seoulMap unselected">
+		치킨 지수
+		<c:forEach items="${groupByLocCafe }" var="loc">
+			<p class="statsItemName">${loc.loc }</p>
+			<div class="statsItemBar" style="--w: ${loc.count }px"></div>
+		</c:forEach>
+	</div>
+	<div class="seoulMap unselected">
+		치킨 지수
+		<c:forEach items="${groupByLocDDuck }" var="loc">
 			<p class="statsItemName">${loc.loc }</p>
 			<div class="statsItemBar" style="--w: ${loc.count }px"></div>
 		</c:forEach>
