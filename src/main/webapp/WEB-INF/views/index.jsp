@@ -52,21 +52,21 @@
 		치킨 지수
 		<c:forEach items="${groupByLocChicken }" var="loc">
 			<p class="statsItemName">${loc.loc }</p>
-			<div class="statsItemBar" style="--w: ${loc.count }px"></div>
+			<div class="statsItemBar" style="--w: ${loc.count * 2.5 }px"></div>
 		</c:forEach>
 	</div>
 	<div class="seoulMap unselected">
-		치킨 지수
+		카페 지수
 		<c:forEach items="${groupByLocCafe }" var="loc">
 			<p class="statsItemName">${loc.loc }</p>
-			<div class="statsItemBar" style="--w: ${loc.count }px"></div>
+			<div class="statsItemBar" style="--w: ${loc.count / 1.5 }px"></div>
 		</c:forEach>
 	</div>
 	<div class="seoulMap unselected">
-		치킨 지수
+		떡볶이 지수
 		<c:forEach items="${groupByLocDDuck }" var="loc">
 			<p class="statsItemName">${loc.loc }</p>
-			<div class="statsItemBar" style="--w: ${loc.count }px"></div>
+			<div class="statsItemBar" style="--w: ${loc.count * 6 }px"></div>
 		</c:forEach>
 	</div>
 	<script type="text/javascript" src="${request.contextPath}/restaurant_map/resources/js/index.js"></script>
