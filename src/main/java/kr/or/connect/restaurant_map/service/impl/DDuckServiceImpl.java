@@ -13,16 +13,16 @@ import kr.or.connect.restaurant_map.service.DDuckService;
 @Service
 public class DDuckServiceImpl implements DDuckService{
 	@Autowired
-	DDuckDao DDuckDao;
+	DDuckDao dduckDao;
 	
 	@Override
 	@Transactional
 	public List<DDuck> getTop3DDuck(Integer start){
-		List<DDuck> top3 = DDuckDao.selectTop3DDuck(start, DDuckService.LIMIT); 
+		List<DDuck> top3 = dduckDao.selectTop3DDuck(start, DDuckService.LIMIT); 
 		return top3;
 	}
 	public List<DDuck> getGroupByLocDDuck(){
-		List<DDuck> groupLoc = DDuckDao.selectGroupLocDDuck();
+		List<DDuck> groupLoc = dduckDao.selectGroupLocDDuck();
 		return groupLoc;
 	}
 	

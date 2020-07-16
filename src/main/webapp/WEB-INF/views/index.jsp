@@ -7,30 +7,30 @@
 <title>Restaurant-Map</title>
 <body>
 
+	<!-- 브랜드 랭킹 그래프 -->
 	<div class="rankingBox">
-		<div class="rankingTitle">Top 3
-			<c:forEach items="${top3chicken }" var="item">
-				<div class="rankingContent">
-					${item.name } : ${item.count }
+		<div class="rankingTitle">순위
+			<c:forEach items="${chicken_ranking }" var="item">
+				<p class = "statsItemName">${item.name }</p>
+				<div class ="statsItemBar" style="--w: ${item.count * 2.5}px">
+					<div class ="statsItemCnt">${item.count }</div>
 				</div>
 			</c:forEach>
 		</div>
 	</div>
 	<div class="rankingBox unselected">
-		<div class="rankingTitle">Top 3
-			<c:forEach items="${top3cafe }" var="item">
-				<div class="rankingContent">
-					${item.name } : ${item.count }
-				</div>
+		<div class="rankingTitle">순위
+			<c:forEach items="${cafe_ranking }" var="item">
+				<p class = "statsItemName">${item.name }</p>
+				<div class ="statsItemBar" style="--w: ${item.count / 3 }px"></div>
 			</c:forEach>
 		</div>
 	</div>
 	<div class="rankingBox unselected">
-		<div class="rankingTitle">Top 3
-			<c:forEach items="${top3dduck }" var="item">
-				<div class="rankingContent">
-					${item.name } : ${item.count }
-				</div>
+		<div class="rankingTitle">순위
+			<c:forEach items="${dduck_ranking }" var="item">
+				<p class = "statsItemName">${item.name }</p>
+				<div class ="statsItemBar" style="--w: ${item.count * 2.5}px"></div>
 			</c:forEach>
 		</div>
 	</div>
@@ -48,6 +48,7 @@
 		</button>
 	</div>
 
+	<!--지수 그래프 -->
 	<div class="seoulMap ">
 		치킨 지수
 		<c:forEach items="${groupByLocChicken }" var="loc">

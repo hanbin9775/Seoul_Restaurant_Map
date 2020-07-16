@@ -9,20 +9,21 @@ import org.springframework.transaction.annotation.Transactional;
 import kr.or.connect.restaurant_map.dao.CafeDao;
 import kr.or.connect.restaurant_map.dto.Cafe;
 import kr.or.connect.restaurant_map.service.CafeService;
+import kr.or.connect.restaurant_map.service.ChickenService;
 
 @Service
 public class CafeServiceImpl implements CafeService{
 	@Autowired
-	CafeDao CafeDao;
+	CafeDao cafeDao;
 	
 	@Override
 	@Transactional
 	public List<Cafe> getTop3Cafe(Integer start){
-		List<Cafe> top3 = CafeDao.selectTop3(start, CafeService.LIMIT); 
-		return top3;
+		List<Cafe> ranking = cafeDao.selectTop3(start, CafeService.LIMIT); 
+		return ranking;
 	}
 	public List<Cafe> getGroupByLocCafe(){
-		List<Cafe> groupLoc = CafeDao.selectGroupLocCafe();
+		List<Cafe> groupLoc = cafeDao.selectGroupLocCafe();
 		return groupLoc;
 	}
 }
