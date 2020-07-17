@@ -1,17 +1,11 @@
 package kr.or.connect.restaurant_map.dto;
 
 public class Chicken {
-	private Long id;
+
 	private String name;
 	private String loc;
 	private int count;
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public String getName() {
 		return name;
 	}

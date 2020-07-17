@@ -27,7 +27,7 @@ public class CafeDao {
 	        this.jdbc = new NamedParameterJdbcTemplate(dataSource);
 	    }
 	    
-	    public List<Cafe> selectTop3(Integer start, Integer limit) {
+	    public List<Cafe> selectTop10(Integer start, Integer limit) {
 	    	Map<String, Integer> params = new HashMap<>();
 	    	params.put("start", start);
 	    	params.put("limit", limit);

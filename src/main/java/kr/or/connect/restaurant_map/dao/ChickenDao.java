@@ -27,7 +27,7 @@ public class ChickenDao {
 	        this.jdbc = new NamedParameterJdbcTemplate(dataSource);
 	    }
 	    
-	    public List<Chicken> selectTop3(Integer start, Integer limit) {
+	    public List<Chicken> selectTop10(Integer start, Integer limit) {
 	    	Map<String, Integer> params = new HashMap<>();
 	    	params.put("start", start);
 	    	params.put("limit", limit);

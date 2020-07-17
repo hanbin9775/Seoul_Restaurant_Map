@@ -18,8 +18,8 @@ public class CafeServiceImpl implements CafeService{
 	
 	@Override
 	@Transactional
-	public List<Cafe> getTop3Cafe(Integer start){
-		List<Cafe> ranking = cafeDao.selectTop3(start, CafeService.LIMIT); 
+	public List<Cafe> getTop10Cafe(Integer start){
+		List<Cafe> ranking = cafeDao.selectTop10(start, CafeService.LIMIT); 
 		return ranking;
 	}
 	public List<Cafe> getGroupByLocCafe(){

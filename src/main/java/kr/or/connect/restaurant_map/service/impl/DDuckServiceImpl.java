@@ -17,8 +17,8 @@ public class DDuckServiceImpl implements DDuckService{
 	
 	@Override
 	@Transactional
-	public List<DDuck> getTop3DDuck(Integer start){
-		List<DDuck> top3 = dduckDao.selectTop3DDuck(start, DDuckService.LIMIT); 
+	public List<DDuck> getTop10DDuck(Integer start){
+		List<DDuck> top3 = dduckDao.selectTop10DDuck(start, DDuckService.LIMIT); 
 		return top3;
 	}
 	public List<DDuck> getGroupByLocDDuck(){

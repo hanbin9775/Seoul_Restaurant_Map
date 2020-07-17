@@ -17,8 +17,8 @@ public class ChickenServiceImpl implements ChickenService{
 	
 	@Override
 	@Transactional
-	public List<Chicken> getTop3Chicken(Integer start){
-		List<Chicken> top3 = chickenDao.selectTop3(start, ChickenService.LIMIT); 
+	public List<Chicken> getTop10Chicken(Integer start){
+		List<Chicken> top3 = chickenDao.selectTop10(start, ChickenService.LIMIT); 
 		return top3;
 	}
 	public List<Chicken> getGroupByLocChicken(){

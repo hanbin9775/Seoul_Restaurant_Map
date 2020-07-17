@@ -27,7 +27,7 @@ public class DDuckDao {
 	        this.jdbc = new NamedParameterJdbcTemplate(dataSource);
 	    }
 	    
-	    public List<DDuck> selectTop3DDuck(Integer start, Integer limit) {
+	    public List<DDuck> selectTop10DDuck(Integer start, Integer limit) {
 	    	Map<String, Integer> params = new HashMap<>();
 	    	params.put("start", start);
 	    	params.put("limit", limit);
