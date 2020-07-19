@@ -22,23 +22,50 @@ DB : MYSQL v5.7.0
 
 ## 3. 실행
 
->	1. mysql> source [파일위치]/createTable.sql
->	2. eclipse> run on server
+>	1 mysql> source [파일위치]/createTable.sql
+
+>>	1-1. CREATE table shops (
+	`상가업소번호` int(20) default null,
+    `상호명` varchar(60) default null,
+    `지점명` varchar(60) default null,
+    `상권업종대분류명` varchar(60) default null,
+    `상권업종중분류명` varchar(60) default null, 
+    `상권업종소분류명` varchar(60) default null,
+    `시군구명` varchar(60) default null
+) charset=euckr;
+
+>>	1-2. load data infile "[csv 파일위치]/seoulshopdb.csv"<br>
+    into table shops<br>
+    character set euckr<br>
+    fields terminated by ','<br>
+    enclosed by '"'<br>
+    lines terminated by '\n'<br>
+    ignore 1 rows;<br>
+    
+>>	1-3. CREATE table restaurant AS ( SELECT * FROM shops WHERE `상권업종대분류명`='음식');
+
+>>	1-4. CREATE table chicken AS ( SELECT `상가업소번호`, `상호명`, `지점명`, `시군구명` FROM restaurant WHERE `상권업종소분류명`='후라이드/양념치킨');
+
+>>	1-5. CREATE table cafe AS ( SELECT `상가업소번호`, `상호명`, `지점명`, `시군구명` FROM restaurant WHERE `상권업소소분류명`='커피전문점/카페/다방');
+       
+>>	1-6. CREATE table dduckbokki AS ( SELECT `상가업소번호`, `상호명`, `지점명`, `시군구명` FROM restaurant WHERE `상권업종소분류명`='떡볶이전문');
+
+>	2 eclipse> run on server
 
 ## 4. 웹 서비스 화면
 
 ### 1. 화면 구성
 
 #### 치킨
-![screenshot1](C:\Users\user\Desktop\Temp\학교수업\db\DBproject\restaurant_map/screenshot1.jpg)
+![screenshot1](screenshot1.jpg)
 <br>
 <br>
 #### 커피
-![screenshot1](C:\Users\user\Desktop\Temp\학교수업\db\DBproject\restaurant_map/screenshot2.jpg)
+![screenshot1](screenshot2.jpg)
 <br>
 <br>
 #### 떡볶이
-![screenshot1](C:\Users\user\Desktop\Temp\학교수업\db\DBproject\restaurant_map/screenshot3.jpg)
+![screenshot1](screenshot3.jpg)
 <br>
 <br>
 
